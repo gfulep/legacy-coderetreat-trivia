@@ -61,6 +61,7 @@ namespace Trivia
 
         public void Roll(int roll)
         {
+            if(!IsPlayable()) throw new Exception("Not enough players to start the game");
             Console.WriteLine(_players[_currentPlayer] + " is the current player");
             Console.WriteLine("They have rolled a " + roll);
 
