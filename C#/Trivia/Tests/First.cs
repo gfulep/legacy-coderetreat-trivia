@@ -41,7 +41,7 @@ public class GameLogicTest
             }
         } while (_notAWinner);
 
-        var ASD = output.ToString();
-        Approvals.VerifyAll(ASD, label: "");
+        var outputLines = output.ToString().TrimEnd().Split(Environment.NewLine);
+        Approvals.VerifyAll(outputLines, label: "GoldenMaster");
     }
 }
