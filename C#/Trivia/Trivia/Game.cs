@@ -143,7 +143,7 @@ namespace Trivia
             {
                 if (_isGettingOutOfPenaltyBox)
                 {
-                    Console.WriteLine("Answer was correct!!!!");
+                    Console.WriteLine("Answer was correct!");
                     _purses[_currentPlayer]++;
                     Console.WriteLine(_players[_currentPlayer]
                             + " now has "
@@ -165,7 +165,7 @@ namespace Trivia
             }
             else
             {
-                Console.WriteLine("Answer was corrent!!!!");
+                Console.WriteLine("Answer was corrent!");
                 _purses[_currentPlayer]++;
                 Console.WriteLine(_players[_currentPlayer]
                         + " now has "
