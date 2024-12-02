@@ -1,3 +1,5 @@
+using System.IO;
+using System;
 using Trivia;
 using Xunit;
 
@@ -6,13 +8,15 @@ namespace Tests;
 public class UserTests
 {
     [Fact]
-    public void AddPlayer()
+    public void If_CorrectlyAnsweredQuestion_Should_WriteOutMessageCorrectly()
     {
         var game = new Game();
-
         game.Add("Chet");
-        game.Add("Pat");
+        var output = new StringWriter();
+        Console.SetOut(output);
+        
+        game.WasCorrectlyAnswered();
 
-        Assert.Equal(1, game.HowManyPlayers());
+        Assert.Contains("Answer was correct!", output.ToString());
     }
 }
