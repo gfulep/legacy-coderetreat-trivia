@@ -143,12 +143,8 @@ namespace Trivia
             {
                 if (_isGettingOutOfPenaltyBox)
                 {
-                    Console.WriteLine("Answer was correct!!!!");
+                    Console.WriteLine("Answer was correct!");
                     _purses[_currentPlayer]++;
-                    Console.WriteLine(_players[_currentPlayer]
-                            + " now has "
-                            + _purses[_currentPlayer]
-                            + " Gold Coins.");
 
                     var winner = DidPlayerWin();
                     _currentPlayer++;
@@ -165,12 +161,8 @@ namespace Trivia
             }
             else
             {
-                Console.WriteLine("Answer was corrent!!!!");
+                Console.WriteLine("Answer was correct!");
                 _purses[_currentPlayer]++;
-                Console.WriteLine(_players[_currentPlayer]
-                        + " now has "
-                        + _purses[_currentPlayer]
-                        + " Gold Coins.");
 
                 var winner = DidPlayerWin();
                 _currentPlayer++;
