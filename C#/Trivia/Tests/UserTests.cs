@@ -36,4 +36,14 @@ public class UserTests
 
         Assert.Contains("They are player number 10", lines[^1]);
     }
+
+    [Fact]
+    public void If_OnePlayerAdded_Should_NotBeAbleToStartGame()
+    {
+        var game = new Game();
+        game.Add("Chet");
+
+        Exception exception = Assert.Throws<Exception>(() => game.Roll(1));
+        Assert.Equal("Not enough players to start the game", exception.Message);
+    }
 }

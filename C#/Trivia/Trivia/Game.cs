@@ -8,10 +8,10 @@ namespace Trivia
     {
         private readonly List<string> _players = new List<string>();
 
-        private readonly int[] _places = new int[6];
-        private readonly int[] _purses = new int[6];
+        private readonly List<int> _places = new();
+        private readonly List<int> _purses = new();
 
-        private readonly bool[] _inPenaltyBox = new bool[6];
+        private readonly List<bool> _inPenaltyBox = new();
 
         private readonly LinkedList<string> _popQuestions = new LinkedList<string>();
         private readonly LinkedList<string> _scienceQuestions = new LinkedList<string>();
@@ -45,12 +45,12 @@ namespace Trivia
         public bool Add(string playerName)
         {
             _players.Add(playerName);
-            _places[HowManyPlayers()] = 0;
-            _purses[HowManyPlayers()] = 0;
-            _inPenaltyBox[HowManyPlayers()] = false;
+            _places.Add(0);
+            _purses.Add(0);
+            _inPenaltyBox.Add(false);
 
             Console.WriteLine(playerName + " was added");
-            Console.WriteLine("They are player number " + _players.Count);
+            Console.Write("They are player number " + (_players.Count - 1).ToString());
             return true;
         }
 
