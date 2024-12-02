@@ -1,12 +1,12 @@
 using System;
 using ApprovalTests;
 using ApprovalTests.Reporters;
+using Xunit;
 
-[UseReporter(typeof(VisualStudioReporter))]
-[TestFixture]
+[UseReporter(typeof(RiderReporter), typeof(VisualStudioReporter))]
 public class SampleTest
 {
-    [Test]
+    [Fact]
     public void TestList()
     {
         var names = new[] {"Llewellyn", "James", "Dan", "Jason", "Katrina"};
