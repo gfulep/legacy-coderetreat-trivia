@@ -23,17 +23,17 @@ public class UserTests
     [Fact]
     public void If_TenPlayerAdded_Should_WriteOutMessageCorrectly()
     {
+        var output = new StringWriter();
+        Console.SetOut(output);
+        
         var game = new Game();
         for (int i = 0; i <= 10; i++)
         {
             game.Add("Chet" + i);
-            
         }
-        var output = new StringWriter();
-        Console.SetOut(output);
         
-        game.WasCorrectlyAnswered();
+        var lines = output.ToString().Split(Environment.NewLine);
 
-        Assert.Contains("Answer was correct!", output.ToString());
+        Assert.Contains("They are player number 10", lines[^1]);
     }
 }
